@@ -4,7 +4,7 @@
 * HTML 코드 실습을 시작한다
 * p tag, table tag 간단한 style 설정
 
-## 덤으로 vi editer도 실습
+## 덤으로 vi editor도 실습
 * 파일열기 : vi 파일이름
 * Insert(편집) mode 진입 : vi 처음화면에서 i
 * Overwrite(편집) mode 진입 : vi 처음화면에서 o
