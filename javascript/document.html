@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <p id="p1">대한민국만세</p>
     <p id="p2">우리나라만세</p>
     <p id="p3">Republic of Korea</p>
-</body>
-<script>
-
+  </body>
+  <script>
     // 함수(method)를 선언하기
     // click_func이라는 함수를 선언한다
     // 이 함수는 { ... } 코드를 실행한다
     let click_p1 = function (ev) {
-        alert("안녕하세요");
-    }
+      alert("안녕하세요");
+    };
 
     // 옛날 방식의 함수 선언
     function click_p2(ev) {
-        alert("p2를 클릭했군요");
+      alert("p2를 클릭했군요");
     }
     // 현재 문서의 id가 p1인 p tag에 click event 핸들러를 설정하겠다
     // 보고있는 화면에서 p#p1 tag를 클릭하면 함수 click_func을 실행하라
-    document 
-        // id가 p1인 p tag를 선택하여
-        .querySelector("p#p1")
+    document
+      // id가 p1인 p tag를 선택하여
+      .querySelector("p#p1")
 
-        // click event를 설정(추가)하라
-        .addEventListener("click", click_p1);
+      // click event를 설정(추가)하라
+      .addEventListener("click", click_p1);
 
     // id가 p2인 tag가 클릭되면 click_p2 함수를 실행하라
     // call back 함수 지정방식
-    document
-        .querySelector("p#p2")
-        .addEventListener("click", click_p2);
-    
+    document.querySelector("p#p2").addEventListener("click", click_p2);
+
     /*
     동기식(Sync) 코드 진행(실행) 방식
 
@@ -74,21 +71,17 @@
 
         전체적인 순서는 있지만 이벤트에 따라 순서가 바뀌어서 실행되기도 한다
     */
-    document
-        .querySelector("p#p3")
-        .addEventListener("mouseover", function(ev) {
-            // alert("p3에 마우스 올려짐")
-            // p3에 마우스 올리면 '반갑습니다'로 변경
-            ev.target.textContent = "반갑습니다"
-            ev.target.style.backgroundColor = "gainsboro";
-            ev.target.style.color = "purple";
-        })
-    
-    document
-        .querySelector("p#p3")
-        .addEventListener("mouseout", function(ev) {
-            // p3에서 마우스 떼면 'Republic of Korea'로 변경
-            ev.target.textContent = "Republic of Korea"
-        })
-</script>
+    document.querySelector("p#p3").addEventListener("mouseover", function (ev) {
+      // alert("p3에 마우스 올려짐")
+      // p3에 마우스 올리면 '반갑습니다'로 변경
+      ev.target.textContent = "반갑습니다";
+      ev.target.style.backgroundColor = "gainsboro";
+      ev.target.style.color = "purple";
+    });
+
+    document.querySelector("p#p3").addEventListener("mouseout", function (ev) {
+      // p3에서 마우스 떼면 'Republic of Korea'로 변경
+      ev.target.textContent = "Republic of Korea";
+    });
+  </script>
 </html>
