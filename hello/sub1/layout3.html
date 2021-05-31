@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      section#main_sec article {
+        display: inline-block;
+        border: 1px solid greenyellow;
+        padding: 2rem;
+        margin: 5px;
+        width: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>본문 만들기</h1>
+      <p>section과 article을 사용한 본문 만들기</p>
+    </header>
+    <section id="main_sec">
+      <article>공지사항</article>
+      <article>자유게시판</article>
+      <article>
+        <img src="../2021.webp" width="500px" height="300px"/>
+        <img src="../2021.jpeg" alt="2022 이미지" width="500px"/>
+        <p>
+            img tag를 사용하여 이미지를 표현할 때는 반드시 alt 속성을 지정하자<br>
+            alt 속성은 화면읽기 소프트웨어에서 감지하여 이미지에 대한 내용을 읽어준다<br>
+            시각 장애인을 위한 웹 접근성 표준지침에 필수 요소로 지정되어 있다
+        </p>
+      </article>
+    </section>
+  </body>
+</html>
