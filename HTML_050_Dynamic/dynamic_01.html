@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_01</title>
+    <style>
+        div {
+            border: 1px solid aquamarine;
+            font-size: 40px;
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid goldenrod;
+        }
+
+        table td {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    const doc = document;
+    let body = doc.querySelector("body");
+    // div box tag 생성!
+    let div = doc.createElement("div");
+    // 생성한 div box에 '대한민국'이라는 문자열 추가
+    div.innerHTML = "대한민국";
+    // 만들어진 div를 body에 child로 추가하라 (body tag 내부)
+    body.appendChild(div);
+
+    let cell = doc.createElement("td");
+    let row = doc.createElement("tr");
+    let table = doc.createElement("table");
+
+    let cell1 = doc.createElement("td");
+    cell1.innerHTML = "첫 번째";
+    row.appendChild(cell1);
+
+    let cell2 = doc.createElement("td");
+    cell2.innerHTML = "두 번째";
+    row.appendChild(cell2);
+
+    let cell3 = doc.createElement("td");
+    cell3.innerHTML = "세 번째";
+    row.appendChild(cell3);
+
+    table.appendChild(row);
+
+    body.appendChild(table);
+
+    let row1 = doc.createElement("tr");
+
+    let cell4 = doc.createElement("td");
+    cell4.innerHTML = "첫 번째";
+    row1.appendChild(cell4);
+
+    let cell5 = doc.createElement("td");
+    cell5.innerHTML = "두 번째";
+    row1.appendChild(cell5);
+
+    let cell6 = doc.createElement("td");
+    cell6.innerHTML = "세 번째";
+    row1.appendChild(cell6);
+
+    table.appendChild(row1);
+
+    body.appendChild(table);
+</script>
+
+</html>

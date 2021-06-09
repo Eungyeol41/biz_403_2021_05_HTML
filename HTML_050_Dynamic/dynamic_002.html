@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_02</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        table td {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>이름</td>
+            <td>전화번호</td>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>010-1115-1121</td>
+            <td>서울특별시</td>
+        </tr>
+    </table>
+</body>
+<script>
+    /* 위에 보이는 table을 JS 코드를 사용하여 만드시오 */
+
+    let table = document.createElement("table");
+    let tr1 = document.createElement("tr");
+    let td1 = document.createElement("td");
+    td1.innerHTML = "이름";
+
+    let td2 = document.createElement("td");
+    td2.innerHTML = "전화번호";
+
+    let td3 = document.createElement("td");
+    td3.innerHTML = "주소";
+
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tr1.appendChild(td3);
+
+    table.appendChild(tr1);
+
+    let tr2 = document.createElement("tr");
+    tr2.appendChild(document.createElement("td").innerHTML = "홍길동");
+    tr2.appendChild(document.createElement("td").innerHTML = "010-111");
+    tr2.appendChild(document.createElement("td").innerHTML = "광주");
+
+    table.appendChild(tr2);
+
+    document.querySelector("body").appendChild(table);
+
+    // js 배열을 사용하여
+    const titles = ["이름", "전화번호", "주소"];
+    const data = ["홍길동", "010-1119-2252", "서울시"];
+
+    let table1 = document.createElement("table");
+    let tr = document.createElement("tr");
+    for (let i = 0; i < titles.length; i++) {
+        let td = document.createElement("td");
+        td.innerHTML = titles[i];
+        tr.appendChild(td);
+    }
+    table1.appendChild(tr);
+    document.querySelector("body").appendChild(table1);
+
+</script>
+
+</html>

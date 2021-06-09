@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_02</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        table td {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>이름</td>
+            <td>전화번호</td>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>010-1115-1121</td>
+            <td>서울특별시</td>
+        </tr>
+    </table>
+</body>
+<script>
+    /* 위에 보이는 table을 JS 코드를 사용하여 만드시오 */
+
+    const doc = document;
+
+    let body = doc.querySelector("body");
+
+    let cell = doc.createElement("td");
+    let row = doc.createElement("tr");
+    let table = doc.createElement("table");
+
+    let cell1 = doc.createElement("td");
+    let cell2 = doc.createElement("td");
+    let cell3 = doc.createElement("td");
+    let cell4 = doc.createElement("td");
+    let cell5 = doc.createElement("td");
+    let cell6 = doc.createElement("td");
+
+    let row1 = doc.createElement("tr");
+    let row2 = doc.createElement("tr");
+
+    cell1.innerHTML = "이름";
+    row1.appendChild(cell1);
+    cell2.innerHTML = "전화번호";
+    row1.appendChild(cell2);
+    cell3.innerHTML = "주소";
+    row1.appendChild(cell3);
+
+    cell4.innerHTML = "홍길동";
+    row2.appendChild(cell4);
+    cell5.innerHTML = "010-0123-4567";
+    row2.appendChild(cell5);
+    cell6.innerHTML = "서울특별시";
+    row2.appendChild(cell6);
+
+    table.appendChild(row1);
+    table.appendChild(row2);
+
+    body.appendChild(table);
+
+</script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_04</title>
+    <style>
+        p {
+            padding: 5px;
+            width: 80%;
+            margin: 0;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 5px;
+            outline: 0;
+            border: 1px solid goldenrod;
+            border-radius: 5px;
+        }
+
+        input:hover {
+            background-color: honeydew;
+        }
+
+        button {
+            width: 20%;
+            background-color: khaki;
+            outline: 0;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 0;
+            /* top, bottom만 10px */
+        }
+
+        button:hover {
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        table td,
+        th {
+            border: 1px solid blue;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- name은 서버에 전송될 이름, id는 script에서 사용할 이름 -->
+    <p><input type="text" name="p_name" id="p_name" placeholder="이름을 입력하세요"></p>
+    <p><input type="tel" name="p_tel" id="p_tel" placeholder="전화번호를 입력하세요"></p>
+    <p><input type="text" name="p_addr" id="p_addr" placeholder="주소를 입력하세요"></p>
+    <p><button class="btn_ok">OK</button></p>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+        </tr>
+    </table>
+</body>
+<script>
+    const table = document.querySelector("table");
+
+    document.querySelector("button.btn_ok").addEventListener("click", (e) => {
+        let p_name = document.querySelector("input#p_name");
+        let p_tel = document.querySelector("input#p_tel");
+        let p_addr = document.querySelector("input#p_addr");
+
+        let datas = [p_name.value, p_tel.value, p_addr.value];
+
+        let tr = document.createElement("tr");
+        for (data in datas) {
+            let td = document.createElement("td");
+            td.innerHTML = datas[data];
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+        p_name.value = "";
+        p_tel.value = "";
+        p_addr.value = "";
+    })
+
+</script>
+
+</html>
