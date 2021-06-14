@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 이 페이지에서 사용할 animation 선언*/
+        @keyframes firstSlide {
+
+            /* 키프레임 시작점 */
+            0% {
+                transform: translateX(0);
+            }
+
+            /* 키프레임 종료점 */
+            100% {
+                transform: translateX(clac(-500px * 7));
+            }
+        }
+
+        div.main {
+            width: 500px;
+            height: 500px;
+            border: 1px solid lavender;
+            margin: 20px;
+        }
+
+        div.main div.mask {
+            border: 1px solid lavenderblush;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        div.main div.iamges {
+            width: 500px;
+            border: 1px solid lemonchiffon;
+            display: flex;
+
+            animation: firstSlide 10s linear infinite;
+        }
+
+        div.main div.images img {
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="mask">
+            <div class="images">
+                <img src="image_2.jpg">
+                <img src="image_3.jpg">
+                <img src="image_6.jpg">
+                <img src="image_7.jpg">
+                <img src="image_2.jpg">
+                <img src="image_3.jpg">
+                <img src="image_6.jpg">
+                <img src="image_7.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

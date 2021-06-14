@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        div.main {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        div.main_image img {
+            width: 500px;
+            height: 500px;
+        }
+
+        @keyframes ticker_slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-100px * 8));
+            }
+        }
+
+        div.ticker_mask {
+            overflow: hidden;
+        }
+
+        div.ticker_mask div.images {
+            display: flex;
+
+            animation: ticker_slide 3s linear infinite;
+        }
+
+        div.ticker_mask img {
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            transition: opacity 0.5;
+        }
+
+        /* ticker_mask에 마우스 hover : 애니메이션 잠시 멈추기 */
+        div.ticker_mask:hover div.images {
+            animation-play-state: paused;
+        }
+
+        div.ticker_mask img:hover {
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        article.nav {
+            font-size: 30px;
+            font-weight: 800;
+            display: flex;
+        }
+
+        article.nav div:last-child {
+            margin-left: auto;
+        }
+
+        article.nav div:hover {
+            color: blueviolet;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("div.ticker_mask").addEventListener("click", (ev) => {
+                let img = ev.target;
+                if (img.tagName = "IMG") {
+                    let imgSrc = img.src;
+
+                    document.querySelector("div.main_image img").src = imgSrc;
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main_image">
+            <img src="image_7.jpg">
+        </div>
+        <div class="ticker_mask">
+            <div class="images">
+                <img src="image_2.jpg">
+                <img src="image_3.jpg">
+                <img src="image_7.jpg">
+                <img src="image_2.jpg">
+                <img src="image_3.jpg">
+                <img src="image_6.jpg">
+                <img src="image_7.jpg">
+            </div>
+        </div>
+        <article class="nav">
+            <div>&lt;</div>
+            <div>&gt;</div>
+        </article>
+    </div>
+</body>
+
+</html>

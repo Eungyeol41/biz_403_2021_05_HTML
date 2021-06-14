@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide</title>
+    <style>
+        section {
+            width: 500px;
+            height: 500px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        div.images img {
+            width: 500px;
+            height: 500px;
+        }
+
+        div.mask {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        article.nav {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+
+            /* 세로방향 중앙에 item을 위치하고자 할 때 */
+            /* 절대좌표 위치를 parents의 50%만큼 아래로 위치 */
+            top: 50%;
+            /* 자기 자신의 크기의 50%만큼 후진 */
+            transform: translateY(-50%);
+
+            bottom: 50px;
+            font-size: 30px;
+            font-weight: 800;
+            display: flex;
+        }
+    </style>
+    <script>
+        const IMAGE_WIDTH = 500;
+        const images = document.querySelector("div.images")
+        let position = IMAGE_WIDTH;
+        const prev = () => {
+            position += IMAGE_WIDTH * (-1)
+            images.style.transform = `translateX(${position})`;
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("article.nav").addEventListener("click", (ev) => {
+                let tag = e.target;
+                if (tag.tagName === "DIV") {
+                    if (tag.innerText === "<") {
+                        alert("앞으로")
+                        prev();
+                    } else if (tag.innerText === ">") {
+                        alert("뒤로")
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="mask">
+            <div class="images">
+                <img src="image_7.jpg">
+                <img src="image_2.jpg">
+                <img src="image_3.jpg">
+                <img src="image_6.jpg">
+                <img src="image_7.jpg">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
